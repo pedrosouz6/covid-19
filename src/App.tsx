@@ -1,7 +1,13 @@
 import Routes from './routes';
+import GlobalStyle from './styles/global/style';
 
 function App() {
-  return <Routes/>
+  return (
+    <>
+    <GlobalStyle />
+    <Routes/>
+    </>
+  )
 }
 
 export default App;

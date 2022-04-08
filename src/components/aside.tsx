@@ -1,10 +1,10 @@
-import { Aside } from '../styles/pages/menu';
+import { Aside } from '../styles/components/menu';
 
 export default function AsideMenu() {
     return (
         <Aside>
             <div className="header">
-                <h1>Menu</h1>
+                <h1>Covid-19</h1>
             </div>
             <nav>
                 <ul>
