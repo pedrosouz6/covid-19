@@ -1,10 +1,10 @@
-import Menu from '../components/aside';
+import Aside from '../components/aside';
 
 export default function World(){
+
     return (
         <>
-            <Menu />
-            <p>home</p>
+            <Aside />
         </>
     )
 }

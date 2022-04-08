@@ -1,4 +1,4 @@
-import { Aside } from '../styles/components/menu';
+import { Aside } from '../styles/components/aside';
 
 export default function AsideMenu() {
     return (
