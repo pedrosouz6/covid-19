@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Style } from '../default/styles';
 
 const {  
-    background,
+    background_secondary,
     color,
     background_animation,
     transition
@@ -12,15 +12,13 @@ const {
 export const Aside = styled.aside `
     width: 120px;
     height: 100vh;
-    background: ${background};
+    background: ${background_secondary};
     color: ${color};
 
     .header {
         width: 100%;
-        height: 80px;
-        line-height: 80px;
         text-align: center;
-        margin-bottom: 1rem;
+        margin: 2rem 0;
 
         h1 {
             font-size: 10pt;
@@ -39,7 +37,7 @@ export const Aside = styled.aside `
 
         li {
             width: 100%;
-            background-color: ${background};
+            background-color: ${background_secondary};
             
             padding: 15px 0;
             
