@@ -2,21 +2,39 @@ import Aside from '../components/aside';
 import { Main } from '../styles/pages/world';
 import { Chart } from "react-google-charts";
 
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
 export default function World(){
-     const data = [
-        ["Year", "Sales", 'e'],
-        ["2004", 1000, 400],
-        ["2005", 1170, 460],
-        ["2006", 660, 1120],
-        ["2007", 1030, 540],
-      ];
-      
-       const options = {
+
+    const options = {
         title: "Company Performance",
         curveType: "function",
+        backgroundColor: 'none',
         legend: { position: "bottom" },
-      };
+    };
 
+    let data = [
+        ['Day', 'Sales'],
+    ]
+
+    useEffect(() => {
+        axios.get('https://disease.sh/v3/covid-19/historical/all')
+        .then(response => {
+            const validate = response.data;
+            
+            if(validate) {
+                const deaths = validate.deaths;
+                const deathsObj = Object.entries(deaths);
+                const deathsArray = deathsObj.slice(',');
+
+                deathsArray.map(item => {
+                    data.push([... item]);
+                })
+            }
+        })
+    }, []);
+    
     return (
         <Main>
             <Aside />
@@ -34,8 +52,8 @@ export default function World(){
 
                         <Chart
                             chartType="LineChart"
-                            width="100%"
-                            height="400px"
+                            width="500px"
+                            height="300px"
                             data={data}
                             options={options}
                         />
