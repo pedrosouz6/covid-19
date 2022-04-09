@@ -2,39 +2,28 @@ import Aside from '../components/aside';
 import { Main } from '../styles/pages/world';
 import { Chart } from "react-google-charts";
 
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import useWorld from '../hooks/world';
 
 export default function World(){
 
-    const options = {
-        title: "Company Performance",
+    const { dataDeaths, dataCases } = useWorld();
+
+    const optionsDeaths = {
+        title: "Deaths Covid-19",
         curveType: "function",
         backgroundColor: 'none',
         legend: { position: "bottom" },
     };
 
-    let data = [
-        ['Day', 'Sales'],
-    ]
+    const optionsCases = {
+        title: "Cases Covid-19",
+        curveType: "function",
+        backgroundColor: 'none',
+        legend: { position: "bottom" },
+    };
 
-    useEffect(() => {
-        axios.get('https://disease.sh/v3/covid-19/historical/all')
-        .then(response => {
-            const validate = response.data;
-            
-            if(validate) {
-                const deaths = validate.deaths;
-                const deathsObj = Object.entries(deaths);
-                const deathsArray = deathsObj.slice(',');
+    console.log(dataCases)
 
-                deathsArray.map(item => {
-                    data.push([... item]);
-                })
-            }
-        })
-    }, []);
-    
     return (
         <Main>
             <Aside />
@@ -50,13 +39,25 @@ export default function World(){
                             <p>Last updated in 08/04/2022</p>
                         </div>
 
-                        <Chart
-                            chartType="LineChart"
-                            width="500px"
-                            height="300px"
-                            data={data}
-                            options={options}
-                        />
+                        <article>
+                            <div className="graphic">
+                                <Chart
+                                    chartType="LineChart"
+                                    width="500px"
+                                    height="300px"
+                                    data={dataDeaths}
+                                    options={optionsDeaths}
+                                />
+
+                                <Chart
+                                    chartType="LineChart"
+                                    width="500px"
+                                    height="300px"
+                                    data={dataCases}
+                                    options={optionsCases}
+                                />
+                            </div>
+                        </article>
                     </div>
                 </div>
             </section>

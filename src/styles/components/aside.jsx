@@ -11,7 +11,8 @@ const {
 
 export const Aside = styled.aside `
     width: 120px;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: auto;
     background: ${background_secondary};
     color: ${color};
 

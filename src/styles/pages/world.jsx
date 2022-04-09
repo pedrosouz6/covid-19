@@ -8,7 +8,6 @@ const {
 
 export const Main = styled.main `
     width: 100%;
-    height: 100vh;
     display: flex;
     
     section {
@@ -18,12 +17,17 @@ export const Main = styled.main `
 
     .container--world {
         width: 100%;
-        height: 100vh;
+        min-height: 100vh;
+        max-height: auto;
         padding: 2rem 0;
 
         .name--page h4 {
             margin-bottom: 1rem;
             font-weight: 500;
+        }
+
+        .graphic {
+            display: flex;
         }
     } 
 `
