@@ -26,8 +26,20 @@ export const Main = styled.main `
             font-weight: 500;
         }
 
-        .graphic {
-            display: flex;
+        article {
+            width: 100%;
+
+            .graphics {
+                width: 100%;
+                background: red;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .graphic {
+                flex: 1 1 100px;
+            }
         }
+
     } 
 `

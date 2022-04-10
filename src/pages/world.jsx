@@ -40,22 +40,26 @@ export default function World(){
                         </div>
 
                         <article>
-                            <div className="graphic">
-                                <Chart
-                                    chartType="LineChart"
-                                    width="500px"
-                                    height="300px"
-                                    data={dataDeaths}
-                                    options={optionsDeaths}
-                                />
+                            <div className="graphics">
+                                <div className="graphic">
+                                    <Chart
+                                        chartType="LineChart"
+                                        width="100%"
+                                        height="250px"
+                                        data={dataDeaths}
+                                        options={optionsDeaths}
+                                    />
+                                </div>
 
-                                <Chart
-                                    chartType="LineChart"
-                                    width="500px"
-                                    height="300px"
-                                    data={dataCases}
-                                    options={optionsCases}
-                                />
+                                <div className="graphic">
+                                    <Chart
+                                        chartType="LineChart"
+                                        width="100%"
+                                        height="250px"
+                                        data={dataCases}
+                                        options={optionsCases}
+                                    />
+                                </div>
                             </div>
                         </article>
                     </div>
