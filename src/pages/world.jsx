@@ -3,10 +3,14 @@ import { Main } from '../styles/pages/world';
 import { Chart } from "react-google-charts";
 
 import useWorld from '../hooks/world';
+import useAllDatas from '../hooks/allDatas';
 
 export default function World(){
 
     const { dataDeaths, dataCases } = useWorld();
+    const { allDatas } = useAllDatas();
+
+    console.log(allDatas)
 
     const optionsDeaths = {
         title: "Deaths Covid-19",
