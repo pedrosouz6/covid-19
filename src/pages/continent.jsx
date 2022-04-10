@@ -5,7 +5,7 @@ import { Chart } from "react-google-charts";
 import useWorld from '../hooks/world';
 import useAllDatas from '../hooks/allDatas';
 
-export default function World(){
+export default function Continent(){
 
     const { dataDeaths, dataCases } = useWorld();
     const { allDatas } = useAllDatas();
@@ -24,7 +24,6 @@ export default function World(){
         legend: { position: "bottom" },
     };
 
-
     return (
         <Main>
             <Aside />
@@ -32,12 +31,12 @@ export default function World(){
                 <div className="center">
                     <div className="container--world">
                         <div className="name--page">
-                            <h4>World</h4>
+                            <h4>Continent</h4>
                             <p>Last updated in 08/04/2022</p>
                         </div>
 
                         <div className="numbers--covid">
-
+                            
                             <article className='cards--covid'>
                                 <div className="cards" id='deaths'>
                                     <div className="header--card">

@@ -1,15 +1,15 @@
 import { createContext, useEffect } from 'react';
 import axios from 'axios';
 
-export const ContextWorld = createContext();
+export const ContextContinent = createContext();
 
-export default function ProviderWorld({ children }) {
+export default function ProviderContinent({ children }) {
 
-    let dataDeaths = [
+    let dataDeathsContinent = [
         ['Day', 'Deaths'],
     ]
 
-    let dataCases = [
+    let dataCasesContinent = [
         ['Day', 'Cases'],
     ]
 
@@ -19,7 +19,7 @@ export default function ProviderWorld({ children }) {
         const deathsArray = deathsObj.slice(',');
 
         deathsArray.map(item => {
-            dataDeaths.push([... item]);
+            dataDeathsContinent.push([... item]);
         })
     }
 
@@ -29,14 +29,16 @@ export default function ProviderWorld({ children }) {
         const casesArray = casesObj.slice(',');
 
         casesArray.map(item => {
-            dataCases.push([... item]);
+            dataCasesContinent.push([... item]);
         })
     }
 
     useEffect(() => {
-        axios.get('https://disease.sh/v3/covid-19/historical/all')
+        axios.get('https://disease.sh/v3/covid-19/continents/North America')
         .then(response => {
             const datas = response.data;
+
+            console.log(datas)
             
             if(datas) {
                 deathsCovid(datas);
@@ -45,14 +47,16 @@ export default function ProviderWorld({ children }) {
         })
     }, []);
 
+    console.log(dataDeathsContinent)
+
     return (
-        <ContextWorld.Provider value={{
-            dataDeaths,
-            dataCases
+        <ContextContinent.Provider value={{
+            dataDeathsContinent,
+            dataCasesContinent
         }}>
 
             { children }
 
-        </ContextWorld.Provider>
+        </ContextContinent.Provider>
     )
 }

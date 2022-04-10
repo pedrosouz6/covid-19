@@ -10,3 +10,46 @@
     margin: 0 auto;
     padding: 0 20px;
 }
+
+#deaths {
+    background-color: rgba(255, 0, 0, .2);
+}
+
+#deaths span, 
+#deaths p {
+    color: red;
+    font-weight: 700;
+}
+
+#cases {
+    background-color: rgba(0, 0, 255, 0.2);
+}
+
+#cases span, 
+#cases p {
+    color: rgb(0, 0, 255);
+    font-weight: 700;
+}
+
+#recovered {
+    background-color: rgba(61, 201, 61, .2);
+}
+
+#recovered span,
+#recovered p {
+    color: rgb(61, 201, 61);
+    font-weight: 700;
+}
+
+.name--page {
+    margin-bottom: 2rem;
+}
+
+.name--page h4 {
+    font-weight: 500;
+    font-size: 14pt;
+}
+
+.name--page p {
+    font-size: 10pt;
+}

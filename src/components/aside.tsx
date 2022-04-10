@@ -1,4 +1,5 @@
 import { Aside } from '../styles/components/aside';
+import { Link } from 'react-router-dom';
 
 export default function AsideMenu() {
     return (
@@ -8,8 +9,8 @@ export default function AsideMenu() {
             </div>
             <nav>
                 <ul>
-                    <li>World</li>
-                    <li>Continent</li>
+                    <li> <Link to='/dashboard/world'> World</Link></li>
+                    <li> <Link to='/dashboard/continent'> Continent</Link></li>
                     <li>Country</li>
                     <li>State</li>
                 </ul>

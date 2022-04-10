@@ -20,26 +20,54 @@ export const Main = styled.main `
         min-height: 100vh;
         max-height: auto;
         padding: 2rem 0;
-
-        .name--page h4 {
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-
-        article {
+       
+        .numbers--covid {
             width: 100%;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
 
             .graphics {
-                width: 100%;
-                background: red;
+                flex: 1;
                 display: flex;
                 flex-direction: column;
             }
 
-            .graphic {
+            .cards--covid {
+                flex: 1 1 300px;
+                
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .cards {
                 flex: 1 1 100px;
+                max-width: 140px;
+                height: 150px;
+                
+            }
+
+            .header--card span {
+                display: block;
+
+                height: 35px;
+                line-height: 35px;
+
+                text-align: center;
+                font-size: 10pt;
+            }
+
+            .content-card {
+                height: calc(100% - 40px);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                p {
+                    font-size: 16pt;
+                }
             }
         }
-
     } 
 `
