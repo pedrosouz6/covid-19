@@ -1,36 +1,19 @@
-import { createContext, useEffect } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import axios from 'axios';
 
 export const ContextContinent = createContext();
 
 export default function ProviderContinent({ children }) {
 
-    let dataDeathsContinent = [
-        ['Day', 'Deaths'],
+    const [ datasContinent, setDatasContinent ] = useState([]);
+    const [ continentCountries, setContinentCountries ] = useState([]);
+
+    let countries = [
+        ['Country'],
     ]
 
-    let dataCasesContinent = [
-        ['Day', 'Cases'],
-    ]
-
-    function deathsCovid(datasDeaths) {
-        const deaths = datasDeaths.deaths;
-        const deathsObj = Object.entries(deaths);
-        const deathsArray = deathsObj.slice(',');
-
-        deathsArray.map(item => {
-            dataDeathsContinent.push([... item]);
-        })
-    }
-
-    function casesCovid(datasCases) {
-        const cases = datasCases.cases;
-        const casesObj = Object.entries(cases);
-        const casesArray = casesObj.slice(',');
-
-        casesArray.map(item => {
-            dataCasesContinent.push([... item]);
-        })
+    function countryArray(countryAll) {
+        countryAll.map(item => countries.push(... [[item]]));
     }
 
     useEffect(() => {
@@ -38,21 +21,18 @@ export default function ProviderContinent({ children }) {
         .then(response => {
             const datas = response.data;
 
-            console.log(datas)
-            
             if(datas) {
-                deathsCovid(datas);
-                casesCovid(datas);
+                setDatasContinent(datas);
+                setContinentCountries(datas.countries);
+                countryArray(datas.countries)
             }
         })
     }, []);
 
-    console.log(dataDeathsContinent)
-
     return (
         <ContextContinent.Provider value={{
-            dataDeathsContinent,
-            dataCasesContinent
+            datasContinent,
+            continentCountries
         }}>
 
             { children }
