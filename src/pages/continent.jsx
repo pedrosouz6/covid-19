@@ -5,22 +5,13 @@ import useContinent from '../hooks/continent';
 import { Chart } from "react-google-charts";
 export default function Continent(){
 
-    const { datasContinent, continentCountries } = useContinent();
-    console.log(continentCountries.map(item => item+'w').join(','))
+    const { datasContinent, continentCountries, countries } = useContinent();
 
-    const data = [
-        ["Country"],
-        ["Germany"],
-        ["United States"],
-        ["Brazil"],
-        ["Canada"],
-        ["France"],
-        ["RU"],
-      ];
+    continentCountries.map(item => countries.push(... [[item]]));
 
-      const options = {
+    const options = {
         backgroundColor: 'none'
-      }
+    }
 
     return (
         <Main>
@@ -77,15 +68,14 @@ export default function Continent(){
                                                 const chart = chartWrapper.getChart();
                                                 const selection = chart.getSelection();
                                                 if (selection.length === 0) return;
-                                                const region = data[selection[0].row + 1];
-                                                console.log("Selected : " + region);
+                                                const region = countries[selection[0].row + 1];
                                             },
                                             },
                                         ]}
                                         chartType="GeoChart"
                                         width='500px'
                                         height="400px"
-                                        data={data}
+                                        data={countries}
                                         options={options}
                                     />
                                 </div>
@@ -94,8 +84,8 @@ export default function Continent(){
 
                         <div className="right">
                             <article className='continent-country'>
-                                { continentCountries.map(item => (
-                                    <p>{ item }</p>
+                                { continentCountries.map((item, key) => (
+                                    <p key={key}>{ item }</p>
                                 ))}
                                 
                             </article>

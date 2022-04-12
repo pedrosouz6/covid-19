@@ -12,27 +12,25 @@ export default function ProviderContinent({ children }) {
         ['Country'],
     ]
 
-    function countryArray(countryAll) {
-        countryAll.map(item => countries.push(... [[item]]));
-    }
-
     useEffect(() => {
-        axios.get('https://disease.sh/v3/covid-19/continents/North America')
+        axios.get('https://disease.sh/v3/covid-19/continents/South America')
         .then(response => {
             const datas = response.data;
 
             if(datas) {
                 setDatasContinent(datas);
                 setContinentCountries(datas.countries);
-                countryArray(datas.countries)
             }
         })
     }, []);
 
+    console.log(countries)
+
     return (
         <ContextContinent.Provider value={{
             datasContinent,
-            continentCountries
+            continentCountries,
+            countries
         }}>
 
             { children }

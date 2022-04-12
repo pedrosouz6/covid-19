@@ -2,6 +2,6 @@ import { useContext } from 'react';
 import { ContextContinent } from '../context/continent';
 
 export default function useContinent() {
-    const { datasContinent, continentCountries } = useContext(ContextContinent);
-    return  { datasContinent, continentCountries };
+    const { datasContinent, continentCountries, countries } = useContext(ContextContinent);
+    return  { datasContinent, continentCountries, countries };
 }
