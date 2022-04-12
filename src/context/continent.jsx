@@ -7,13 +7,14 @@ export default function ProviderContinent({ children }) {
 
     const [ datasContinent, setDatasContinent ] = useState([]);
     const [ continentCountries, setContinentCountries ] = useState([]);
+    const [ chooseContinent, setChooseContinent ] = useState('Asia');
 
     let countries = [
         ['Country'],
     ]
 
     useEffect(() => {
-        axios.get('https://disease.sh/v3/covid-19/continents/South America')
+        axios.get(`https://disease.sh/v3/covid-19/continents/${chooseContinent}`)
         .then(response => {
             const datas = response.data;
 
@@ -22,7 +23,7 @@ export default function ProviderContinent({ children }) {
                 setContinentCountries(datas.countries);
             }
         })
-    }, []);
+    }, [chooseContinent]);
 
     console.log(countries)
 
@@ -30,7 +31,8 @@ export default function ProviderContinent({ children }) {
         <ContextContinent.Provider value={{
             datasContinent,
             continentCountries,
-            countries
+            countries,
+            setChooseContinent
         }}>
 
             { children }

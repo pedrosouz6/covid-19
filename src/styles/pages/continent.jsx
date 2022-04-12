@@ -80,7 +80,7 @@ export const Main = styled.main `
                 align-items: center;
 
                 p {
-                    font-size: 16pt;
+                    font-size: 18pt;
                 }
             }
         }

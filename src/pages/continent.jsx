@@ -5,12 +5,17 @@ import useContinent from '../hooks/continent';
 import { Chart } from "react-google-charts";
 export default function Continent(){
 
-    const { datasContinent, continentCountries, countries } = useContinent();
+    const { datasContinent, continentCountries, countries, setChooseContinent } = useContinent();
 
     continentCountries.map(item => countries.push(... [[item]]));
 
     const options = {
         backgroundColor: 'none'
+    }
+
+    function ContinentChoose(e) {
+        setChooseContinent(e.target.value);
+        
     }
 
     return (
@@ -83,6 +88,13 @@ export default function Continent(){
                         </div>
 
                         <div className="right">
+                            <div className="search--country">
+                                <select onChange={(e) => ContinentChoose(e)}>
+                                    <option value="Asia">Asia</option>
+                                    <option value="South America">South America</option>
+                                    <option value="North America">North America</option>
+                                </select>
+                            </div>
                             <article className='continent-country'>
                                 { continentCountries.map((item, key) => (
                                     <p key={key}>{ item }</p>
