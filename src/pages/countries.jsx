@@ -9,7 +9,7 @@ import { Chart } from "react-google-charts";
 import { IoIosArrowDown } from 'react-icons/io';
 import { IoIosArrowUp } from 'react-icons/io';
 
-export default function Continent(){
+export default function Countries(){
 
     const [ showCountries, setShowCountries ] = useState(false);
 

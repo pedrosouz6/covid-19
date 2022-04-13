@@ -135,5 +135,19 @@ export const Main = styled.main `
                 }
             }
         }
+
+        .continent-country {
+            background: ${background_secondary};
+            padding: 10px;
+            min-height: auto;
+            max-height: 460px;
+            overflow-x: hidden;
+            border-radius: 5px;
+
+
+            p {
+                margin-bottom: 4px;
+            }
+        }
     } 
 `
