@@ -15,7 +15,7 @@ export default function Continent(){
 
     function ContinentChoose(e) {
         setChooseContinent(e.target.value);
-        
+
     }
 
     return (
@@ -89,8 +89,12 @@ export default function Continent(){
 
                         <div className="right">
                             <div className="search--country">
+                                <h4>Pesquisar o continente: </h4>
                                 <select onChange={(e) => ContinentChoose(e)}>
                                     <option value="Asia">Asia</option>
+                                    <option value="Africa">Africa</option>
+                                    <option value="Australia-Oceania">Australia-Oceania</option>  
+                                    <option value="Europe">Europe</option>
                                     <option value="South America">South America</option>
                                     <option value="North America">North America</option>
                                 </select>

@@ -22,7 +22,34 @@ export const Main = styled.main `
         padding: 2rem 0;
         flex-wrap: wrap;
         display: flex;
-        gap: 2rem;
+        gap: 2.5rem;
+
+        .search--country {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid white;
+
+            h4 {
+                font-weight: 500;
+            }
+
+            select {
+                width: 150px;
+                height: 32px;
+                outline: none;
+                border: 1px solid black;
+                border-radius: 2px;
+
+                option {
+                    display: block;
+                    padding: 1rem;
+                    background: red;
+                }
+            }
+        }
 
         .left, 
         .right {
@@ -60,7 +87,6 @@ export const Main = styled.main `
                 flex: 1 1 100px;
                 max-width: 155px;
                 height: 150px;
-                
             }
 
             .header--card span {

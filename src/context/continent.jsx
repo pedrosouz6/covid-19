@@ -25,8 +25,6 @@ export default function ProviderContinent({ children }) {
         })
     }, [chooseContinent]);
 
-    console.log(countries)
-
     return (
         <ContextContinent.Provider value={{
             datasContinent,
