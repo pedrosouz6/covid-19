@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import { Style } from '../default/styles';
 
 const {
-    background_primary
+    background_primary,
+    background_secondary,
+    transition
 } = Style.default;
 
 export const Main = styled.main `
@@ -23,6 +25,30 @@ export const Main = styled.main `
         flex-wrap: wrap;
         display: flex;
         gap: 2.5rem;
+
+        .names--countries {
+            width: 100%;
+            height: 35px;
+            
+            background: ${background_secondary};
+            color: #333;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 10px;
+            margin-bottom: 1rem; 
+            border-radius: 5px;
+            cursor: pointer;
+
+            transition: ${transition};
+            
+            &:hover {
+                color: black;
+            }
+        }
+
 
         .search--country {
             display: flex;
@@ -46,7 +72,6 @@ export const Main = styled.main `
                 option {
                     display: block;
                     padding: 1rem;
-                    background: red;
                 }
             }
         }

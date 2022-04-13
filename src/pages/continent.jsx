@@ -1,11 +1,19 @@
 import Aside from '../components/aside';
 import { Main } from '../styles/pages/continent';
 
+import { useState } from 'react';
+
 import useContinent from '../hooks/continent';
+
 import { Chart } from "react-google-charts";
+import { IoIosArrowDown } from 'react-icons/io';
+import { IoIosArrowUp } from 'react-icons/io';
+
 export default function Continent(){
 
-    const { datasContinent, continentCountries, countries, setChooseContinent } = useContinent();
+    const [ showCountries, setShowCountries ] = useState(false);
+
+    const { datasContinent, continentCountries, countries, setChooseContinent, chooseContinent } = useContinent();
 
     continentCountries.map(item => countries.push(... [[item]]));
 
@@ -15,7 +23,10 @@ export default function Continent(){
 
     function ContinentChoose(e) {
         setChooseContinent(e.target.value);
+    }
 
+    function ChooseShowCountries() {
+        setShowCountries(!showCountries);
     }
 
     return (
@@ -89,7 +100,9 @@ export default function Continent(){
 
                         <div className="right">
                             <div className="search--country">
+
                                 <h4>Pesquisar o continente: </h4>
+
                                 <select onChange={(e) => ContinentChoose(e)}>
                                     <option value="Asia">Asia</option>
                                     <option value="Africa">Africa</option>
@@ -98,13 +111,23 @@ export default function Continent(){
                                     <option value="South America">South America</option>
                                     <option value="North America">North America</option>
                                 </select>
+
                             </div>
-                            <article className='continent-country'>
+
+                            <p className='names--countries' onClick={() => ChooseShowCountries()}>
+                                Países do {chooseContinent} 
+                                { showCountries ?  <IoIosArrowUp /> : <IoIosArrowDown /> }
+                               
+                            </p> 
+
+                            { showCountries && (
+                                <article className='continent-country'>
                                 { continentCountries.map((item, key) => (
                                     <p key={key}>{ item }</p>
                                 ))}
-                                
-                            </article>
+                                </article>
+                            ) }
+                            
                         </div>
                     </div>
                 </div>

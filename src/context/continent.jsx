@@ -30,7 +30,8 @@ export default function ProviderContinent({ children }) {
             datasContinent,
             continentCountries,
             countries,
-            setChooseContinent
+            setChooseContinent,
+            chooseContinent
         }}>
 
             { children }
