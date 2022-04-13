@@ -11,7 +11,7 @@ export default function AsideMenu() {
                 <ul>
                     <li> <Link to='/dashboard/world'> World</Link></li>
                     <li> <Link to='/dashboard/continent'> Continent</Link></li>
-                    <li>Country</li>
+                    <li> <Link to='/dashboard/countries'> Country </Link> </li>
                     <li>State</li>
                 </ul>
             </nav>

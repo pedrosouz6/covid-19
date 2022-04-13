@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 
 import World from './pages/world';
 import Continent from './pages/continent';
+import Countries from './pages/countries';
 
 import ProviderWorld from './context/world';
 import ProviderAllDatas from './context/allDatas';
@@ -22,6 +23,7 @@ export default function Routess(){
                             <Route path='/' element={ <Redirect></Redirect> } />
                             <Route path='/dashboard/world' element={ <World /> } />
                             <Route path='/dashboard/continent' element={ <Continent /> } />
+                            <Route path='/dashboard/countries' element={ <Countries /> } />
                         </Routes>
                     </ProviderContinent>
                 </ProviderAllDatas>
