@@ -7,6 +7,8 @@ import Countries from './pages/countries';
 import ProviderWorld from './context/world';
 import ProviderAllDatas from './context/allDatas';
 import ProviderContinent from './context/continent';
+import ProviderCountries from './context/countries';
+import ProviderInfoCountry from './context/infoCountry';
 
 export default function Routess(){
 
@@ -19,12 +21,16 @@ export default function Routess(){
             <ProviderWorld>
                 <ProviderAllDatas>
                     <ProviderContinent>
-                        <Routes>
-                            <Route path='/' element={ <Redirect></Redirect> } />
-                            <Route path='/dashboard/world' element={ <World /> } />
-                            <Route path='/dashboard/continent' element={ <Continent /> } />
-                            <Route path='/dashboard/countries' element={ <Countries /> } />
-                        </Routes>
+                        <ProviderInfoCountry>
+                            <ProviderCountries>
+                                <Routes>
+                                    <Route path='/' element={ <Redirect></Redirect> } />
+                                    <Route path='/dashboard/world' element={ <World /> } />
+                                    <Route path='/dashboard/continent' element={ <Continent /> } />
+                                    <Route path='/dashboard/countries' element={ <Countries /> } />
+                                </Routes>
+                            </ProviderCountries>
+                        </ProviderInfoCountry>
                     </ProviderContinent>
                 </ProviderAllDatas>
             </ProviderWorld>

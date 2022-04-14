@@ -3,7 +3,8 @@ import { Main } from '../styles/pages/continent';
 
 import { useState } from 'react';
 
-import useContinent from '../hooks/continent';
+import useCountries from '../hooks/countries';
+import useInfoCountry from '../hooks/infoCountries';
 
 import { Chart } from "react-google-charts";
 import { IoIosArrowDown } from 'react-icons/io';
@@ -13,18 +14,20 @@ export default function Countries(){
 
     const [ showCountries, setShowCountries ] = useState(false);
 
-    const { datasContinent, continentCountries, countries, setChooseContinent, chooseContinent } = useContinent();
+    const { datasCountries } = useCountries();
+    const { datasInfoCountry } = useInfoCountry();
 
-    continentCountries.map(item => countries.push(... [[item]]));
+    const data = [
+        ['Country'],
+        ['US'],
+    ]
+
+    console.log(datasCountries)
 
     const options = {
         backgroundColor: 'none',
     }
-
-    function ContinentChoose(e) {
-        setChooseContinent(e.target.value);
-    }
-
+    
     function ChooseShowCountries() {
         setShowCountries(!showCountries);
     }
@@ -51,7 +54,7 @@ export default function Countries(){
                                         </div>
 
                                         <div className="content-card">
-                                            <p>{ datasContinent.todayDeaths }</p>
+                                            <p>{ datasInfoCountry.deaths }</p>
                                         </div>
                                     </div>
 
@@ -61,7 +64,7 @@ export default function Countries(){
                                         </div>
 
                                         <div className="content-card">
-                                            <p>{ datasContinent.todayCases }</p>
+                                            <p>{ datasInfoCountry.cases }</p>
                                         </div>
                                     </div>
 
@@ -71,7 +74,7 @@ export default function Countries(){
                                         </div>
 
                                         <div className="content-card">
-                                            <p>{ datasContinent.todayRecovered }</p>
+                                            <p>{ datasInfoCountry.recovered }</p>
                                         </div>
                                     </div>
                                 </article>
@@ -84,14 +87,14 @@ export default function Countries(){
                                                 const chart = chartWrapper.getChart();
                                                 const selection = chart.getSelection();
                                                 if (selection.length === 0) return;
-                                                const region = countries[selection[0].row + 1];
+                                                const region = data[selection[0].row + 1];
                                             },
                                             },
                                         ]}
                                         chartType="GeoChart"
                                         width='500px'
                                         height="400px"
-                                        data={countries}
+                                        data={data}
                                         options={options}
                                     />
                                 </div>
@@ -100,32 +103,21 @@ export default function Countries(){
 
                         <div className="right">
                             <div className="search--country">
-
-                                <h4>Search continent: </h4>
-
-                                <select onChange={(e) => ContinentChoose(e)}>
-                                    <option value="Asia">Asia</option>
-                                    <option value="Africa">Africa</option>
-                                    <option value="Australia-Oceania">Australia-Oceania</option>  
-                                    <option value="Europe">Europe</option>
-                                    <option value="South America">South America</option>
-                                    <option value="North America">North America</option>
-                                </select>
-
+                                <h4>United States</h4>
                             </div>
 
                             <p className='names--countries' onClick={() => ChooseShowCountries()}>
-                                Countries of {chooseContinent} 
+                                States
                                 { showCountries ?  <IoIosArrowUp /> : <IoIosArrowDown /> }
                             </p> 
 
                             { showCountries && (
                                 <article className='continent-country'>
-                                { continentCountries.map((item, key) => (
-                                    <p key={key}>{ item }</p>
+                                { datasCountries.map((item, key) => (
+                                    <p key={key}>{ item.state }</p>
                                 ))}
                                 </article>
-                            ) }
+                            )}
                             
                         </div>
                     </div>
