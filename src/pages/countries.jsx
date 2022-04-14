@@ -14,6 +14,8 @@ export default function Countries(){
 
     const [ showCountries, setShowCountries ] = useState(false);
 
+    const [ filterDatas, setFilterDatas ] = useState('total');
+
     const { datasCountries } = useCountries();
     const { datasInfoCountry } = useInfoCountry();
 
@@ -48,11 +50,13 @@ export default function Countries(){
                             <div className="numbers--covid">
                             
                             <div className="container--cards">
-                                <p>Filter: </p>
-                                <select>
-                                    <option value="total">Total</option>
-                                    <option value="today">Today</option>
-                                </select>
+                                <div className="filter--datas">
+                                    <p>Filter: </p>
+                                    <select onChange={(e) => setFilterDatas(e.target.value)}>
+                                        <option value="total">Total</option>
+                                        <option value="today">Today</option>
+                                    </select>
+                                </div>
                                 <article className='cards--covid'>
                                     
                                     <div className="cards" id='deaths'>
@@ -61,7 +65,7 @@ export default function Countries(){
                                         </div>
 
                                         <div className="content-card">
-                                            <p>{ datasInfoCountry.deaths }</p>
+                                            <p>{ filterDatas === 'total' ? datasInfoCountry.deaths : datasInfoCountry.todayDeaths }</p>
                                         </div>
                                     </div>
 
@@ -71,7 +75,7 @@ export default function Countries(){
                                         </div>
 
                                         <div className="content-card">
-                                            <p>{ datasInfoCountry.cases }</p>
+                                            <p>{ filterDatas === 'total' ? datasInfoCountry.cases : datasInfoCountry.todayCases }</p>
                                         </div>
                                     </div>
 
@@ -81,7 +85,7 @@ export default function Countries(){
                                         </div>
 
                                         <div className="content-card">
-                                            <p>{ datasInfoCountry.recovered }</p>
+                                            <p>{ filterDatas === 'total' ? datasInfoCountry.recovered : datasInfoCountry.todayRecovered }</p>
                                         </div>
                                     </div>
                                 </article>

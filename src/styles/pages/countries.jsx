@@ -102,6 +102,16 @@ export const Main = styled.main `
                 flex: 1 1 300px;
             }
 
+            .filter--datas {
+                display: flex;
+                margin-bottom: 1rem;
+                gap: 1rem;
+
+                select {
+                    outline: none;
+                }
+            }
+
             .cards--covid {
                 width: 100%;
                 display: flex;
