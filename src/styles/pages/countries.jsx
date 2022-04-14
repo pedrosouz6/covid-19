@@ -49,7 +49,6 @@ export const Main = styled.main `
             }
         }
 
-
         .search--country {
             display: flex;
             align-items: center;
@@ -99,9 +98,12 @@ export const Main = styled.main `
                 flex-direction: column;
             }
 
-            .cards--covid {
+            .container--cards {
                 flex: 1 1 300px;
-                
+            }
+
+            .cards--covid {
+                width: 100%;
                 display: flex;
                 justify-content: center;
                 flex-wrap: wrap;

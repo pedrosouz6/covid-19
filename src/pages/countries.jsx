@@ -1,5 +1,5 @@
 import Aside from '../components/aside';
-import { Main } from '../styles/pages/continent';
+import { Main } from '../styles/pages/countries';
 
 import { useState } from 'react';
 
@@ -47,10 +47,17 @@ export default function Countries(){
 
                             <div className="numbers--covid">
                             
+                            <div className="container--cards">
+                                <p>Filter: </p>
+                                <select>
+                                    <option value="total">Total</option>
+                                    <option value="today">Today</option>
+                                </select>
                                 <article className='cards--covid'>
+                                    
                                     <div className="cards" id='deaths'>
                                         <div className="header--card">
-                                            <span>Today Deaths</span>
+                                            <span>Total Deaths</span>
                                         </div>
 
                                         <div className="content-card">
@@ -60,7 +67,7 @@ export default function Countries(){
 
                                     <div className="cards" id='cases'>
                                         <div className="header--card">
-                                            <span>Today Cases</span>
+                                            <span>Total Cases</span>
                                         </div>
 
                                         <div className="content-card">
@@ -70,7 +77,7 @@ export default function Countries(){
 
                                     <div className="cards" id='recovered'>
                                         <div className="header--card">
-                                            <span>Today Recovered</span>
+                                            <span>Total Recovered</span>
                                         </div>
 
                                         <div className="content-card">
@@ -78,6 +85,7 @@ export default function Countries(){
                                         </div>
                                     </div>
                                 </article>
+                            </div>
                                 <div className="grafic--map">
                                     <Chart
                                         chartEvents={[
