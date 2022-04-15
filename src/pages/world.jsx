@@ -33,7 +33,6 @@ export default function World(){
                     <div className="container--world">
                         <div className="name--page">
                             <h4>World</h4>
-                            <p>Last updated in 08/04/2022</p>
                         </div>
 
                         <div className="numbers--covid">

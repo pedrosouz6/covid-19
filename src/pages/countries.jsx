@@ -43,8 +43,7 @@ export default function Countries(){
                         <div className="left">
 
                             <div className="name--page">
-                                <h4>Countries</h4>
-                                <p>Last updated in 08/04/2022</p>
+                                <h4>Country</h4>
                             </div>
 
                             <div className="numbers--covid">
