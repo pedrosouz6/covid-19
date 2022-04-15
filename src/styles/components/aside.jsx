@@ -33,10 +33,16 @@ export const Aside = styled.aside `
         
         display: flex;
         align-items: center;
-        /* justify-content: center; */
         flex-direction: column;
 
         li {
+            width: 100%;
+        }
+
+        li a {
+            display: block;
+            text-decoration: none;
+            color: black;
             width: 100%;
             background-color: ${background_secondary};
             
@@ -49,6 +55,8 @@ export const Aside = styled.aside `
             &:hover {
                 background: ${background_animation};
             }
+
+            
         }
 
     }
