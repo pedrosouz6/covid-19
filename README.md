@@ -10,22 +10,23 @@
 
  #### Mundo
 
-* <p> Você vai ter acesso as informações de mortes, casos e recuperados do coronavírus no mundo. </p>
+* Você vai ter acesso as informações de mortes, casos e recuperados do coronavírus no mundo;
+* Com gráficos para mostrar os dados dos últimos dias.
 
 <img src='./img-github/img-world.png' alt='Image World Page' />
 
 #### Continente
 
-* <p> Você vai ter acesso as informações de mortes, casos e recuperados do coronavírus no continente. </p>
-* <p> Poderá ver os países que pertence a esse continente. </p>
+* Você vai ter acesso as informações de mortes, casos e recuperados do coronavírus no continente;
+* Poderá ver os países que pertence a esse continente.
 
 <img src='./img-github/img-continent.png' alt='Image Continent Page' />
 
 #### País
 
-* <p> Você vai ter acesso as informações de mortes, casos e recuperados do coronavírus no país; </p>
-* <p> Poderá ver os estados que pertence a esse país; </p>
-* <p> Filtrar as informações(no dia ou total). </p>
+* Você vai ter acesso as informações de mortes, casos e recuperados do coronavírus no país;
+* Poderá ver os estados que pertence a esse país;
+* Filtrar as informações(no dia ou total).
 
 <img src='./img-github/img-country.png' alt='Image Country Page' />
 
