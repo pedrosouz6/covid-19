@@ -6,6 +6,12 @@
 
 ##
 
+### Páginas
+
+#### World
+
+<p> Você vai ter acesso as informações de coronavírus </p>
+
 <img src='./img-github/img-world.png' alt='Image World Page' />
 <img src='./img-github/img-continent.png' alt='Image Continent Page' />
 <img src='./img-github/img-country.png' alt='Image Country Page' />
