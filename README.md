@@ -1,4 +1,10 @@
-# Covid-19
+## Covid-19
+
+### Sobre
+
+<p> Esse projeto foi desenvolvido para testar a <a href='https://disease.sh/'> API </a> de informações sobre o coronavírus e para fins de estudos. </p>
+
+##
 
 <img src='./img-github/img-world.png' alt='Image World Page' />
 <img src='./img-github/img-continent.png' alt='Image Continent Page' />
