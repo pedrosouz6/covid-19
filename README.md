@@ -2,7 +2,7 @@
 
 ### Sobre
 
-<p> Esse projeto foi desenvolvido para testar a <a href='https://disease.sh/'> API </a> de informações sobre o coronavírus e para <strong> fins de estudos. </strong> </p>
+<p> Esse projeto foi desenvolvido para testar a <a href='https://disease.sh/'> API disease.sh </a> de informações sobre o coronavírus e para <strong> fins de estudos. </strong> </p>
 
 ##
 
